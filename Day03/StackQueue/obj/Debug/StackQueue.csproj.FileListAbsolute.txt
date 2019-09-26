@@ -1,0 +1,7 @@
+E:\BITM Dot Net\Day03\StackQueue\bin\Debug\StackQueue.exe.config
+E:\BITM Dot Net\Day03\StackQueue\bin\Debug\StackQueue.exe
+E:\BITM Dot Net\Day03\StackQueue\bin\Debug\StackQueue.pdb
+E:\BITM Dot Net\Day03\StackQueue\obj\Debug\StackQueue.csproj.CoreCompileInputs.cache
+E:\BITM Dot Net\Day03\StackQueue\obj\Debug\StackQueue.exe
+E:\BITM Dot Net\Day03\StackQueue\obj\Debug\StackQueue.pdb
+E:\BITM Dot Net\Day03\StackQueue\obj\Debug\StackQueue.csprojAssemblyReference.cache

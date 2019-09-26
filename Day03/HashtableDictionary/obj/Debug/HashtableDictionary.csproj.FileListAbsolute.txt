@@ -1,0 +1,7 @@
+E:\BITM Dot Net\Day03\HashtableDictionary\bin\Debug\HashtableDictionary.exe.config
+E:\BITM Dot Net\Day03\HashtableDictionary\bin\Debug\HashtableDictionary.exe
+E:\BITM Dot Net\Day03\HashtableDictionary\bin\Debug\HashtableDictionary.pdb
+E:\BITM Dot Net\Day03\HashtableDictionary\obj\Debug\HashtableDictionary.csproj.CoreCompileInputs.cache
+E:\BITM Dot Net\Day03\HashtableDictionary\obj\Debug\HashtableDictionary.exe
+E:\BITM Dot Net\Day03\HashtableDictionary\obj\Debug\HashtableDictionary.pdb
+E:\BITM Dot Net\Day03\HashtableDictionary\obj\Debug\HashtableDictionary.csprojAssemblyReference.cache

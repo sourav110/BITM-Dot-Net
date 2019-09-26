@@ -1,0 +1,7 @@
+E:\BITM Dot Net\Day03\Day03\bin\Debug\Day03.exe.config
+E:\BITM Dot Net\Day03\Day03\bin\Debug\Day03.exe
+E:\BITM Dot Net\Day03\Day03\bin\Debug\Day03.pdb
+E:\BITM Dot Net\Day03\Day03\obj\Debug\Day03.csprojAssemblyReference.cache
+E:\BITM Dot Net\Day03\Day03\obj\Debug\Day03.csproj.CoreCompileInputs.cache
+E:\BITM Dot Net\Day03\Day03\obj\Debug\Day03.exe
+E:\BITM Dot Net\Day03\Day03\obj\Debug\Day03.pdb
