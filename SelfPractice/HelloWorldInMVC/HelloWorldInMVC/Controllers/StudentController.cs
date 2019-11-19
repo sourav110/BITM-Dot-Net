@@ -15,9 +15,10 @@ namespace HelloWorldInMVC.Controllers
 
         public ActionResult Result()
         {
+            ViewBag.MyName = "Mario";
+            ViewBag.Age = 30;
+
             return View();
         }
-
-
     }
 }
