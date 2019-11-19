@@ -18,7 +18,15 @@ namespace HelloWorldInMVC.Controllers
         {
             //ViewBag.AStudent = aStudent;
 
-            return View(aStudent);
+            List<Student> studentList = new List<Student>()
+            {
+                new Student(){Name = "Alex", Email = "alex@mail.com"},
+                new Student(){Name = "Brad", Email = "brad@mail.com"},
+                new Student(){Name = "Calix", Email = "calix@mail.com"},
+                new Student(){Name = "James", Email = "james@mail.com"}
+            };
+
+            return View(studentList);
         }
     }
 }
