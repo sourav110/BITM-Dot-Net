@@ -1,9 +1,11 @@
 ﻿
 <h2>This is from Result view</h2>
+@using HelloWorldInMVC.Models;
+
+@{
+    Student aStudent = ViewBag.AStudent;
+}
 
 <h3>
-    @ViewBag.MyName, age =
-
-    @ViewBag.Age
-
+    @aStudent.Name
 </h3>

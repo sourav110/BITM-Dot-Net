@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelloWorldInMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,10 +14,9 @@ namespace HelloWorldInMVC.Controllers
         //    return name + ", Your result is A+ & address is " + roadNo + ", " + address;
         //}
 
-        public ActionResult Result()
+        public ActionResult Result(Student aStudent, int? age)
         {
-            ViewBag.MyName = "Mario";
-            ViewBag.Age = 30;
+            ViewBag.AStudent = aStudent;
 
             return View();
         }
