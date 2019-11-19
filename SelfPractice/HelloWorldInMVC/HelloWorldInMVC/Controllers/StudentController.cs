@@ -14,11 +14,11 @@ namespace HelloWorldInMVC.Controllers
         //    return name + ", Your result is A+ & address is " + roadNo + ", " + address;
         //}
 
-        public ActionResult Result(Student aStudent, int? age)
+        public ActionResult Result(Student aStudent)
         {
-            ViewBag.AStudent = aStudent;
+            //ViewBag.AStudent = aStudent;
 
-            return View();
+            return View(aStudent);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿
 <h2>This is from Result view</h2>
-@using HelloWorldInMVC.Models;
+@*@using HelloWorldInMVC.Models;
 
 @{
     Student aStudent = ViewBag.AStudent;
@@ -12,4 +12,11 @@
 
 <h4>
     @aStudent.Email
-</h4>
+</h4>*@
+
+
+@model HelloWorldInMVC.Models.Student
+    <h3>
+        @Model.Name
+        @Model.Email
+    </h3>
