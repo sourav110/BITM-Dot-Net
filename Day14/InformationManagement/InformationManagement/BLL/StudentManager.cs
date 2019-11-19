@@ -14,7 +14,6 @@ namespace InformationManagement.BLL
         {
             StudentGateway studentGateway = new StudentGateway();
 
-            bool isSaved = studentGateway.SaveStudent(student);
             bool isExisted = studentGateway.ExistStudent(student);
 
             if (isExisted)
@@ -22,14 +21,20 @@ namespace InformationManagement.BLL
                 return "Already Exits";
             }
 
-            if (isSaved)
-            {
-                return "Student saved Successfully";
-            }
             else
             {
-                return "Failed to save!";
+                bool isSaved = studentGateway.SaveStudent(student);
+
+                if (isSaved)
+                {
+                    return "Student saved Successfully";
+                }
+                else
+                {
+                    return "Failed to save!";
+                }
             }
+            
         }
 
         public List<Student> GetALLStudents()

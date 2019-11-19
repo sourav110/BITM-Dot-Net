@@ -126,7 +126,7 @@ namespace InformationManagement.DAL
         {
 
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = "DELETE FROM Student_tbl WHERE RegNo = '" + student.RegNo + "';";
+            string query = @"DELETE FROM Student_tbl WHERE RegNo = '" + student.RegNo + "';";
 
             SqlCommand command = new SqlCommand(query, connection);
 
