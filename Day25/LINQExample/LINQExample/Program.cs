@@ -47,7 +47,7 @@ namespace LINQExample
             //}
 
 
-            //Magic method Hahhahahahhahahahahahaha
+            //All of Day25----Magic method Hahhahahahhahahahahahaha
 
             ALLinOne();
 
@@ -63,7 +63,9 @@ namespace LINQExample
                 new Book{Name = "Rich Dad Poor Dad", Author = "Roger",  Price = 900},
                 new Book{Name = "Subtle Art", Author = "Manuel",  Price = 1600},
                 new Book{Name = "Ice and Fire", Author = "Martin", Price = 2000},
-                new Book{Name = "The Vinci Code", Author = "Dan Brown", Price = 800}
+                new Book{Name = "The Vinci Code", Author = "Dan Brown", Price = 800},
+                new Book{Name = "Cloudy Sky", Author = "Marry Gold", Price = 1000}
+                
             };
 
             //Linq and Lambda expression
