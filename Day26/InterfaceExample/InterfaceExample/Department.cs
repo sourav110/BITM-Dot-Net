@@ -13,13 +13,18 @@ namespace InterfaceExample
 
         public string GetInfo()
         {
-            return "A";
+            return "Department GetInfo Method";
             //throw new NotImplementedException();
         }
 
         public void Print()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+        }
+
+        public void PrintData()
+        {
+            //throw new NotImplementedException();
         }
     }
 }

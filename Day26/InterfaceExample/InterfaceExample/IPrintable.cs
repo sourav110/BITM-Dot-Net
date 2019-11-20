@@ -9,5 +9,6 @@ namespace InterfaceExample
     interface IPrintable
     {
         void Print();
+        void PrintData();
     }
 }

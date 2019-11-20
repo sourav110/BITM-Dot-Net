@@ -14,7 +14,7 @@ namespace InterfaceExample
 
         public string GetInfo()
         {
-            return "A";
+            return Name + "'s (Student) GetInfo Method";
             //throw new NotImplementedException();
         }
     }

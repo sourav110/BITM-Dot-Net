@@ -13,13 +13,19 @@ namespace InterfaceExample
 
         public string GetInfo()
         {
-            return "A";
+            return "Course GetInfo Method";
             //throw new NotImplementedException();
         }
 
         public void Print()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Print Course Name: " + CourseName);
+            //throw new NotImplementedException();
+        }
+
+        public void PrintData()
+        {
+            //throw new NotImplementedException();
         }
     }
 }
