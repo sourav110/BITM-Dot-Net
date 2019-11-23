@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "GetAllStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Student aStudent = ViewBag.Student;
+    List<Student> students = ViewBag.Students;
+}
+
+
+@using DemoMVC.Models
+@*@model Student*@
+@model List<Student>
+
+<h2>GetAllStudent</h2>
+
+@*<p>@aStudent.Name</p>
+<p>@aStudent.RegNo</p>
+<p>@aStudent.Age</p>*@
+
+@*<p>@Model.Name</p>
+<p>@Model.RegNo</p>
+<p>@Model.Age</p>*@
+
+@*@foreach (Student student in students)
+{
+    <p>@student.Name</p>
+    <p>@student.RegNo</p>
+    <p>@student.Age</p>
+}*@
+
+@foreach(Student student in Model)
+{
+    <p>@student.Name</p>
+    <p>@student.RegNo</p>
+    <p>@student.Age</p>
+    <p>_______________________</p>
+}
