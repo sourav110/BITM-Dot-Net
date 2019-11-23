@@ -16,6 +16,7 @@ namespace InterfaceExample
             student.Email = "alex@mail.com";
             student.GetInfo();
             Console.WriteLine(student.GetInfo());
+            Console.Write(student.SaveInfo());
             Console.WriteLine();
 
 

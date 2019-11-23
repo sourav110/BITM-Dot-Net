@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceExample
 {
-    class Student : IBasicInfo
+    class Student : IBasicInfo, ISaveInfo
     {
         public string Name { get; set; }
         public string RegNo { get; set; }
@@ -16,6 +16,12 @@ namespace InterfaceExample
         {
             return Name + "'s (Student) GetInfo Method";
             //throw new NotImplementedException();
+        }
+
+        public string SaveInfo()
+        {
+            return Name + "'s info saved successfully";
+            throw new NotImplementedException();
         }
     }
 }
