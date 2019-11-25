@@ -9,12 +9,26 @@
 
 <h2>Employee list</h2>
 
-@foreach(Employee employee in employees)
-{
-    //<p>@employee.EmployeeId</p>
-    <p>@employee.Name</p>
-    <p>@employee.Designation</p>
-    <p>@employee.Age</p>
-    <p>------------</p>
-}
+<table class="table">
+    <thead>
+        <tr>
+            <th>SL#</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Employee employee in employees)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.Name</td>
+                <td>@employee.Designation</td>
+                <td>@employee.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
