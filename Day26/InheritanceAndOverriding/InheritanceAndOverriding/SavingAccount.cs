@@ -19,13 +19,10 @@ namespace InheritanceAndOverriding
             InterestAmount = interestAmount;
         }
         
-        
-
         public double InterestAmount { get; set; }
 
         public override string Transfer(string from, string to, double amount)
         {
-
             return "Successful";
             //throw new NotImplementedException();
         }
