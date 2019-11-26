@@ -36,27 +36,19 @@ namespace PassBy
         }
 
         static void Square(int a, int b)
-
         {
-
             a = a * a;
-
             b = b * b;
 
             Console.WriteLine(a + " " + b);
-
         }
 
         static void Square(Person a, Person b)
-
         {
-
             a.age = a.age * a.age;
-
             b.age = b.age * b.age;
 
             Console.WriteLine(a.age + " " + b.age);
-
         }
     }
 }
