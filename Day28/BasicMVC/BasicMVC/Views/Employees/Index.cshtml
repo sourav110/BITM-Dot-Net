@@ -1,0 +1,18 @@
+﻿@using BasicMVC.Models
+
+@*@using List<Employee>*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Employee> employees = ViewBag.Employees;
+}
+
+<h2>Employee list</h2>
+
+@foreach (Employee employee in employees)
+{
+    <p>@employee.Name</p>
+    <p>@employee.Age</p>
+    <p>---------------</p>
+}
