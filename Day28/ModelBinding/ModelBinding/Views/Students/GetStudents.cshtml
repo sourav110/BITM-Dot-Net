@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ModelBinding.Models.Student>
+@using ModelBinding.Models;
+@{
+    ViewBag.Title = "GetStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int id = 0;
+}
+
+<h2>GetStudents Info</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SL No.</th>
+            <th>Student Name</th>
+            <th>City</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Student student in Model)
+        {
+            id++;
+            <tr>
+                <td>@id</td>
+                <td>@student.Name</td>
+                <td>@student.City</td>
+                <td>@student.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
