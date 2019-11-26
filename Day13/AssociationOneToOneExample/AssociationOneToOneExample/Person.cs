@@ -16,8 +16,6 @@
         public string FirstName { set; get; }
         public string MiddleName { set; get; }
         public string LastName { set; get; }
-        
-
         public Address PersonAddress { set; get; }
 
         public string GetFullName()
