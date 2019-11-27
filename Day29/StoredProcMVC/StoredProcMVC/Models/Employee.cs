@@ -7,17 +7,15 @@ namespace StoredProcMVC.Models
 {
     public class Employee
     {
-        private int deptId;
-
-        public Employee(int employeeId, string name, string designation, string nid, DateTime joiningDate, string bloodGroup, int deptId)
+        public Employee(int employeeId, string name, string designation, string nID, DateTime joiningDate, string bloodGroup, int departmentId)
         {
             EmployeeId = employeeId;
             Name = name;
             Designation = designation;
-            NID = nid;
+            NID = nID;
             JoiningDate = joiningDate;
             BloodGroup = bloodGroup;
-            this.deptId = deptId;
+            DepartmentId = departmentId;
         }
 
         public int EmployeeId { get; set; }
@@ -26,6 +24,6 @@ namespace StoredProcMVC.Models
         public string NID { get; set; }
         public DateTime JoiningDate { get; set; }
         public string BloodGroup { get; set; }
-        public int Department { get; set; }
+        public int DepartmentId { get; set; }
     }
 }

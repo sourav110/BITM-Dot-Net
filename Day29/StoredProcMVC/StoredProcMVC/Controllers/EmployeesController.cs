@@ -11,12 +11,21 @@ namespace StoredProcMVC.Controllers
     public class EmployeesController : Controller
     {
         EmployeeManager employeeManager = new EmployeeManager();
+        DepartmentManager departmentManager = new DepartmentManager();
 
         // GET: Employees
         public ActionResult Index()
         {
             List<Employee> employees = employeeManager.GetEmployees();
             return View(employees);
+        }
+
+        public ActionResult Create()
+        {
+            List<Department> departments = departmentManager.GetDepartments();
+            ViewBag.Departments = departments;
+
+            return View();
         }
     }
 }
