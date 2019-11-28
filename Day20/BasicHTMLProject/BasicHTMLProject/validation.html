@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/jquery-ui.css" rel="stylesheet" />
     <style>
         label.error{
             color: red;
-            font-size: 15px;
+            font-size: 18px;
             font-style: italic;
         }
     </style>
@@ -15,37 +16,43 @@
 <body>
 
     <div class="container">
-        <div style="margin:50px">
+        <div class="col-md-4" style="margin:50px">
             <h2 style="text-align:center">Sign Up</h2>
         </div>
-        <form id="login-form">
-            <div class="form-group">
-                <input id="fname" name="firstName" placeholder="Enter first name" type="text" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input id="lname" name="lastName" placeholder="Enter last name" type="text" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input id="email" name="email" placeholder="Enter email" type="email" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input id="password" name="password" placeholder="Enter password" type="password" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input id="confirm-password" name="confirmPassword" placeholder="Re-enter password" type="password" class="form-control" />
-            </div>
-            <div>
-                <input type="submit" class="btn btn-success btn-block" />
-            </div>
-            <!--<div>
-        <label id="error-msg" style="color:red"></label>
-    </div>-->
-        </form>
+        <div class="col-md-4">
+            <form id="login-form">
+                <div class="form-group">
+                    <input id="fname" name="firstName" placeholder="Enter first name" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input id="lname" name="lastName" placeholder="Enter last name" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input id="email" name="email" placeholder="Enter email" type="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input id="password" name="password" placeholder="Enter password" type="password" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input id="confirm-password" name="confirmPassword" placeholder="Re-enter password" type="password" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input id="dateOfBirth" name="dateOfBirth" placeholder="Birth Date" class="form-control" />
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-success btn-block" />
+                </div>
+                <!--<div>
+            <label id="error-msg" style="color:red"></label>
+        </div>-->
+            </form>
+        </div>
     </div>
 
 
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
     <script>
         $(document).ready(function(){
             $('#login-form').validate({
@@ -82,7 +89,16 @@
                     }
                 }
             })
+
+            $('#dateOfBirth').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showAnim: "blind",
+                dateFormat: "yy-mm-dd"
+            });
         })
+
+
     </script>
 </body>
 </html>
