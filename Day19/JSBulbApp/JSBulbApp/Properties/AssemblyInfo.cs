@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JavascriptBulbApp")]
+[assembly: AssemblyTitle("JSBulbApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JavascriptBulbApp")]
+[assembly: AssemblyProduct("JSBulbApp")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f57f961f-9c1b-4b8a-8cfd-1d967ef8e43c")]
+[assembly: Guid("16b9240a-3854-41f9-8aba-f054117b8653")]
 
 // Version information for an assembly consists of the following four values:
 //
