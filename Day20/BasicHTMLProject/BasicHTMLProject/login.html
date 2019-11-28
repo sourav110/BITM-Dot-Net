@@ -4,6 +4,26 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /*body {
+            background-image: url('Content/images/tree-832079_1280.jpg');
+            background-size: cover;
+        }*/
+
+        /*.background {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }*/
+
+        body{
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,30 +35,54 @@
                 <input id="name" name="name" placeholder="Enter name" type="text" class="form-control" />
             </div>
             <div>
-                <input type="submit" class="btn btn-success btn-block"/>
+                <input type="submit" class="btn btn-success btn-block" />
             </div>
             <div>
                 <label id="error-msg" style="color:red"></label>
             </div>
         </form>
     </div>
+
     <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <!--<script src="Scripts/jparticle.jquery.min.js"></script>
+    <script src="Scripts/particles.min.js"></script>-->
+    <script src="Scripts/jquery.particleground.min.js"></script>
+
     <script>
-        $('#login-form').submit(function () {
-            var name = $('#name').val();
+        //window.onload = function () {
+        //        Particles.init({
+        //            selector: '.background'
+        //        });
+        //};
 
-            if (name == "") {
-                //alert("Please enter name");
-                $('#error-msg').text("Please enter your name");
-                return false;
-            }
+        $(document).ready(function () {
 
-            else {
-                //$('#error-msg').text("Your name is " + name);
-                //$('#error-msg').css("color", "green");
-                alert("Your name is " + name);
-            }
+            $('#login-form').submit(function () {
+                var name = $('#name').val();
+
+                if (name == "") {
+                    //alert("Please enter name");
+                    $('#error-msg').text("Please enter your name");
+                    return false;
+                }
+
+                else {
+                    //$('#error-msg').text("Your name is " + name);
+                    //$('#error-msg').css("color", "green");
+                    alert("Your name is " + name);
+                }
+            });
+
+            //$('body').jParticle();
+            //$('body').Particles();
+            $('body').particleground({
+                dotColor: '#ff1a75',
+                lineColor: '#00ffbf'
+            });
         })
+
+            
+
     </script>
 </body>
 </html>

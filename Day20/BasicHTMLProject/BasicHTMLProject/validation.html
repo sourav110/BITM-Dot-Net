@@ -48,8 +48,8 @@
                     <input type="submit" class="btn btn-success btn-block" />
                 </div>
                 <!--<div>
-            <label id="error-msg" style="color:red"></label>
-        </div>-->
+                    <label id="error-msg" style="color:red"></label>
+                </div>-->
             </form>
         </div>
     </div>
@@ -59,8 +59,13 @@
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/jquery.ripples-min.js"></script>
+
+    <!--<script src="Scripts/jparticle.jquery.min.js"></script>-->
+    <!--<script src="Scripts/particles.min.js"></script>-->
+
+
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#login-form').validate({
                 rules: {
                     firstName: "required",
@@ -74,8 +79,8 @@
                         minlength: 5
                     },
                     confirmPassword: {
-                    required: true,
-                    equalTo: password
+                        required: true,
+                        equalTo: password
                     }
                 },
                 messages: {
@@ -89,9 +94,9 @@
                         required: "please enter password",
                         minlength: "password must be at least 5 characher"
                     },
-                confirmPassword: {
-                    required: "please re-enter your password",
-                    equalTo: "password didn't match"
+                    confirmPassword: {
+                        required: "please re-enter your password",
+                        equalTo: "password didn't match"
                     }
                 }
             })
@@ -104,6 +109,8 @@
             });
 
             $('body').ripples();
+            //$('body').jParticle();
+            //$('body').Particles();
         })
 
 
