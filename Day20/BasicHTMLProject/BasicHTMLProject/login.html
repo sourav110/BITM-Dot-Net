@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div style="margin:50px">
+            <h2 style="text-align: center">Login</h2>
+        </div>
+        <form id="login-form">
+            <div class="col-md-3"></div>
+            <div class="form-group">
+                <input id="name" name="name" placeholder="Enter name" type="text" class="form-control" />
+            </div>
+            <div>
+                <input type="submit" class="btn btn-success btn-block"/>
+            </div>
+            <div>
+                <label id="error-msg" style="color:red"></label>
+            </div>
+        </form>
+    </div>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#login-form').submit(function () {
+            var name = $('#name').val();
+
+            if (name == "") {
+                //alert("Please enter name");
+                $('#error-msg').text("Please enter your name");
+                return false;
+            }
+
+            else {
+                //$('#error-msg').text("Your name is " + name);
+                //$('#error-msg').css("color", "green");
+                alert("Your name is " + name);
+            }
+        })
+    </script>
+</body>
+</html>
