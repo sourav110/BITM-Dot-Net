@@ -5,12 +5,25 @@
     <title></title>
 </head>
 <body>
+
+    <form name="myForm" method="post" action="/action_page.php" onsubmit="return validateMyForm()">
+        Name: <input type="text" name="name" />
+        <input type="submit" value="submit"/>
+    </form>
     <script src="person.js"></script>
     <script>
         //calling person class from person.script file
         var person = new person("James", "H", "Leo");
-
         console.log(person.GetFullName());
+
+        //form validation
+        function validateMyForm() {
+            var inputName = document.forms["myForm"]["name"].value;
+            if (inputName == "") {
+                alert("Name can't be empty");
+                return false;
+            }
+        }
 
     </script>
 </body>
