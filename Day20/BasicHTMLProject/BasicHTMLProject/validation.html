@@ -11,6 +11,11 @@
             font-size: 18px;
             font-style: italic;
         }
+
+        body {
+            background-image: url('Content/images/sheet-4631370_1920.jpg');
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +58,7 @@
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/jquery.ripples-min.js"></script>
     <script>
         $(document).ready(function(){
             $('#login-form').validate({
@@ -96,6 +102,8 @@
                 showAnim: "blind",
                 dateFormat: "yy-mm-dd"
             });
+
+            $('body').ripples();
         })
 
 
