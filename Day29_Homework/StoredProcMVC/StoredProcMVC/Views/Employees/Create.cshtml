@@ -1,0 +1,52 @@
+﻿@using StoredProcMVC.Models;
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Department> departments = ViewBag.Departments;
+}
+
+<h2>Create Employee</h2>
+
+<form method="post">
+    <div class="form-group">
+        <input class="form-control" type="text" name="Name" placeholder="Name" />
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" name="Designation" placeholder="Designation" />
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" name="NID" placeholder="National ID" />
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="date" name="JoiningDate" placeholder="Joining Date" />
+    </div>
+
+    <div class="form-group">
+        <select class="form-control" name="BloodGroup">
+            <option selected value="0">~Select Bloodgroup~</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <select class="form-control" name="DepartmentId">
+            <option value="0">~~Select Department~~</option>
+            @foreach (var dept in departments)
+            {
+                <option value="@dept.DepartmentId">@dept.Code</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" class="btn btn-success"/>
+</form>
