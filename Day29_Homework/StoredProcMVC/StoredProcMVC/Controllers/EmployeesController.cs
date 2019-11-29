@@ -24,7 +24,7 @@ namespace StoredProcMVC.Controllers
         {
             List<Department> departments = departmentManager.GetDepartments();
             ViewBag.Departments = departments;
-
+            ViewBag.IsSaved = true;
             return View();
         }
 
@@ -34,9 +34,18 @@ namespace StoredProcMVC.Controllers
             List<Department> departments = departmentManager.GetDepartments();
             ViewBag.Departments = departments;
 
-            employeeManager.SaveEmployee(employee);
+            bool isSaved = employeeManager.SaveEmployee(employee);
+            if (isSaved)
+            {
+                ViewBag.IsSaved = true;
+                return RedirectToAction("Index");
+            }
 
-            return RedirectToAction("Index");
+            else
+            {
+                ViewBag.IsSaved = false;
+                return View();
+            }
         }
     }
 }

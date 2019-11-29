@@ -6,8 +6,14 @@
 }
 
 <h2>Create Employee</h2>
+@if (!ViewBag.IsSaved)
+{
+    <div class="alert alert-danger">
+        <p>Failed to save. Please enter unique NID</p>
+    </div>
+}
 
-<form method="post">
+<form method="post" id="employeeForm">
     <div class="form-group">
         <input class="form-control" type="text" name="Name" placeholder="Name" />
     </div>
@@ -50,3 +56,44 @@
 
     <input type="submit" class="btn btn-success"/>
 </form>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#employeeForm').validate({
+                rules: {
+                    Name: {
+                        required: true
+                    },
+                    Designation: {
+                        required: true
+                    },
+                    NID: {
+                        required: true
+                    },
+                    DepartmentId: {
+                        min: 1
+                    }
+                },
+
+                messages: {
+                    Name: {
+                        required: "Please enter employee name"
+                    },
+                    Designation: {
+                        required: "please enter designation"
+                    },
+                    NID: {
+                        required: "please enter national id"
+                    },
+                    DepartmentId: {
+                        min: "please select department"
+                    }
+                }
+            })
+        })
+    </script>
+}

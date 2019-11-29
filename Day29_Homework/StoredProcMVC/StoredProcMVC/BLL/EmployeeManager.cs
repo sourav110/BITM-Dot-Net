@@ -18,7 +18,17 @@ namespace StoredProcMVC.BLL
 
         public bool SaveEmployee(Employee employee)
         {
-            return employeeGateway.SaveEmployee(employee);
+            if (!IsEmployeeExist(employee))
+            {
+                return employeeGateway.SaveEmployee(employee);
+            }
+            return false;
+        }
+
+        public bool IsEmployeeExist(Employee employee)
+        {
+            var employeeList = GetEmployees();
+            return employeeList.Any(emp => emp.NID == employee.NID);
         }
     }
 }

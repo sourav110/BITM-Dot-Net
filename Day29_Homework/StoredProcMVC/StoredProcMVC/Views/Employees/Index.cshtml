@@ -5,6 +5,8 @@
 }
 
 <h2>Employee Info</h2>
+
+<h3><a href="@Url.Action("Create")">Create New</a></h3>
 <table class="table">
     <thead>
         <tr>
@@ -18,7 +20,7 @@
     </thead>
 
     <tbody>
-        @foreach(var employee in Model)
+        @foreach (var employee in Model)
         {
             <tr>
                 <td>@employee.Name</td>
