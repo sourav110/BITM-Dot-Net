@@ -15,5 +15,10 @@ namespace StoredProcMVC.BLL
         {
             return employeeGateway.GetEmployees();
         }
+
+        public bool SaveEmployee(Employee employee)
+        {
+            return employeeGateway.SaveEmployee(employee);
+        }
     }
 }

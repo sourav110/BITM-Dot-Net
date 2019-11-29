@@ -44,5 +44,31 @@ namespace StoredProcMVC.DAL
 
             return employees;
         }
+
+        public bool SaveEmployee(Employee employee)
+        {
+            SqlConnection connection = new SqlConnection(conString);
+            SqlCommand command = new SqlCommand("sPSaveEmloyee", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@Name", employee.Name);
+            command.Parameters.AddWithValue("@Designation", employee.Designation);
+            command.Parameters.AddWithValue("@NID", employee.NID);
+            command.Parameters.AddWithValue("@JoiningDate", employee.JoiningDate);
+            command.Parameters.AddWithValue("@BloodGroup", employee.BloodGroup);
+            command.Parameters.AddWithValue("@DepartmentId", employee.DepartmentId);
+
+            connection.Open();
+            int rowAffected = command.ExecuteNonQuery();
+            connection.Close(); 
+
+            if(rowAffected > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -31,8 +31,12 @@ namespace StoredProcMVC.Controllers
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
+            List<Department> departments = departmentManager.GetDepartments();
+            ViewBag.Departments = departments;
 
-            return View();
+            employeeManager.SaveEmployee(employee);
+
+            return RedirectToAction("Index");
         }
     }
 }
