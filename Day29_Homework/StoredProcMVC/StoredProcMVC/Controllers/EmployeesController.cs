@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using StoredProcMVC.Models;
 using StoredProcMVC.BLL;
+using StoredProcMVC.ViewModels;
 
 namespace StoredProcMVC.Controllers
 {
@@ -12,12 +13,14 @@ namespace StoredProcMVC.Controllers
     {
         EmployeeManager employeeManager = new EmployeeManager();
         DepartmentManager departmentManager = new DepartmentManager();
+        EmployeeDepartmentManager employeeDepartmentManager = new EmployeeDepartmentManager();
 
         // GET: Employees
         public ActionResult Index()
         {
-            List<Employee> employees = employeeManager.GetEmployees();
-            return View(employees);
+            //List<Employee> employees = employeeManager.GetEmployees();
+            List<EmployeeDepartmentViewModel> employeesWithDepartment = new List<EmployeeDepartmentViewModel>();
+            return View(employeesWithDepartment);
         }
 
         public ActionResult Create()

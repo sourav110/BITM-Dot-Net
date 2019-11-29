@@ -1,7 +1,8 @@
-﻿@model IEnumerable<StoredProcMVC.Models.Employee>
+﻿@model IEnumerable<StoredProcMVC.ViewModels.EmployeeDepartmentViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int serial = 0;
 }
 
 <h2>Employee Info</h2>
@@ -10,25 +11,30 @@
 <table class="table">
     <thead>
         <tr>
+            <th>SL#</th>
             <th>Name</th>
             <th>Designation</th>
             <th>NID</th>
             <th>Joining Date</th>
             <th>Blood Group</th>
             <th>Department</th>
+            <th>Code</th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var employee in Model)
         {
+            serial++;
             <tr>
-                <td>@employee.Name</td>
+                <td>@serial</td>
+                <td>@employee.EmployeeName</td>
                 <td>@employee.Designation</td>
                 <td>@employee.NID</td>
                 <td>@employee.JoiningDate</td>
                 <td>@employee.BloodGroup</td>
-                <td>@employee.DepartmentId</td>
+                <td>@employee.DepartmentName</td>
+                <td>@employee.Code</td>
             </tr>
         }
     </tbody>
