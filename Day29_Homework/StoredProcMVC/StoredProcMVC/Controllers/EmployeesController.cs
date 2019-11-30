@@ -19,7 +19,7 @@ namespace StoredProcMVC.Controllers
         public ActionResult Index()
         {
             //List<Employee> employees = employeeManager.GetEmployees();
-            List<EmployeeDepartmentViewModel> employeesWithDepartment = new List<EmployeeDepartmentViewModel>();
+            List<EmployeeDepartmentViewModel> employeesWithDepartment = employeeDepartmentManager.GetEmployeeDepartmentViewModels();
             return View(employeesWithDepartment);
         }
 
