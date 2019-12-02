@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ShopInfoManagementMVC.Models.Shop>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int serial = 0;
+}
+
+<h2>Shops of Basundhara City</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SL</th>
+            <th>Shop Name</th>
+            <th>Contact No</th>
+            <th>Level</th>
+            <th>Block</th>
+            <th>Opening On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shop in Model)
+        {
+            serial++;
+
+            <tr>
+                <td>@serial</td>
+                <td>@shop.ShopName</td>
+                <td>@shop.ContactNo</td>
+                <td>@shop.LevelId</td>
+                <td>@shop.BlockId</td>
+                <td>@shop.OpeningOn</td>
+            </tr>
+        }
+        </tbody>
+</table>
+
+
