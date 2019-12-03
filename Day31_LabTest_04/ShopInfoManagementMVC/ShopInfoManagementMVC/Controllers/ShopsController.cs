@@ -19,10 +19,24 @@ namespace ShopInfoManagementMVC.Controllers
         public ActionResult Index()
         {
             //List<Shop> shops = shopManager.GetShops();
+
             List<ShopViewModel> shopListView = viewManager.GetShopsWithLevelAndBlock();
             return View(shopListView);
         }
 
+        [HttpPost]
+        public ActionResult Index(string shopName)
+        {
+            List<ShopViewModel> shopListView = viewManager.GetShopsWithLevelAndBlock();
+
+            if(shopName != null)
+            {
+                shopListView = viewManager.GetShopsWithLevelAndBlock().Where(match => match.ShopName.Contains(shopName)).ToList();
+            }
+
+            return View(shopListView);
+        }
+        
         public ActionResult Create()
         {
             var blocks = blockManager.GetBlocks();
@@ -54,7 +68,6 @@ namespace ShopInfoManagementMVC.Controllers
 
             ViewBag.IsSaved = false;
             return View();
-
         }
     }
 }

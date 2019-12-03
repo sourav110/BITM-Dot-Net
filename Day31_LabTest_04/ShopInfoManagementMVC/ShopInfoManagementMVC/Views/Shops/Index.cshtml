@@ -9,7 +9,16 @@
 <h2>Shops of Basundhara City</h2>
 <h3><a href="@Url.Action("Create")">Create New</a></h3>
 
-<table class="table">
+
+<form method="post" action="/Shops/Index">
+    <div class="form-group">
+        <input class="form-control" type="text" name="shopName" placeholder="Enter shop name to search" />
+        <br />
+        <input type="submit" value="Show" class="btn btn-success" />
+    </div>
+</form>
+
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>SL</th>
@@ -32,7 +41,7 @@
                 <td>@shop.BlockNo</td>
             </tr>
         }
-        </tbody>
+    </tbody>
 </table>
 
 
