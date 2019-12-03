@@ -16,9 +16,19 @@ namespace ShopInfoManagementMVC.BLL
             return shopGateway.GetShops();
         }
 
+        public bool IsShopNameExist(Shop shop)
+        {
+            var shops = GetShops(); 
+            return shops.Any(shp => shp.ShopName == shop.ShopName);
+        }
+
         public bool SaveShop(Shop shop)
         {
-            return shopGateway.SaveShop(shop);
+            if (!IsShopNameExist(shop))
+            {
+                return shopGateway.SaveShop(shop);
+            }
+            return false;
         }
     }
 }

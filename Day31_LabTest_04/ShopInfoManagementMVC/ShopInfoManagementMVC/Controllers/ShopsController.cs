@@ -28,6 +28,8 @@ namespace ShopInfoManagementMVC.Controllers
 
             var levels = levelManager.GetLevels();
             ViewBag.Levels = levels;
+
+            ViewBag.IsSaved = true;
             return View();
         }
 
@@ -40,9 +42,17 @@ namespace ShopInfoManagementMVC.Controllers
             var levels = levelManager.GetLevels();
             ViewBag.Levels = levels;
 
-            shopManager.SaveShop(shop);
+            var isSaved  = shopManager.SaveShop(shop);
 
-            return RedirectToAction("Index");
+            if (isSaved)
+            {
+                ViewBag.IsSaved = true;
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.IsSaved = false;
+            return View();
+
         }
     }
 }
