@@ -7,6 +7,12 @@ namespace ShopInfoManagementMVC.Models
 {
     public class Block
     {
+        public Block(int blockId, string blockNo)
+        {
+            BlockId = blockId;
+            BlockNo = blockNo;
+        }
+
         public int BlockId { get; set; }
         public string BlockNo { get; set; }
     }

@@ -120,9 +120,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\BlockManager.cs" />
+    <Compile Include="BLL\LevelManager.cs" />
     <Compile Include="BLL\ShopManager.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopsController.cs" />
+    <Compile Include="DAL\BlockGateway.cs" />
+    <Compile Include="DAL\LevelGateway.cs" />
     <Compile Include="DAL\ShopGateway.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,6 +175,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shops\Index.cshtml" />
+    <Content Include="Views\Shops\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

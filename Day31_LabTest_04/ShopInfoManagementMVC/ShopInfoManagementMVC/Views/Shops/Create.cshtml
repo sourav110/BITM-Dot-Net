@@ -1,0 +1,47 @@
+﻿@using ShopInfoManagementMVC.Models;
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Block> blocks = ViewBag.Blocks;
+    List<Level> levels = ViewBag.Levels;
+}
+
+<h2>Create Shop</h2>
+
+<form method="post">
+    <div class="form-group">
+        <input class="form-control" type="text" name="ShopName" placeholder="Enter shop name" />
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" name="ContactNo" placeholder="Enter contact no" />
+    </div>
+
+    <div class="form-group">
+        <select class="form-control" name="LevelId">
+            <option value="0">Select Level</option>
+            @foreach(var level in levels)
+            {
+                <option value="@level.LevelId">@level.LevelNo</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <select class="form-control" name="BlockId">
+            <option value="0">Select Block</option>
+            @foreach (var block in blocks)
+            {
+                <option value="@block.BlockId">@block.BlockNo</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="date" name="OpeningOn" />
+    </div>
+
+    <input  type="submit" class="btn btn-block btn-primary"/>
+
+</form>
+

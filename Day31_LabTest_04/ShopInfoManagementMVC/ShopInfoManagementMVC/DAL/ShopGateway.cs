@@ -41,5 +41,29 @@ namespace ShopInfoManagementMVC.DAL
 
             return shops;
         }
+
+        public bool SaveShop(Shop shop)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("sPSaveShop", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@ShopName", shop.ShopName);
+            command.Parameters.AddWithValue("@ContactNo", shop.ContactNo);
+            command.Parameters.AddWithValue("@LevelId", shop.LevelId);
+            command.Parameters.AddWithValue("@BlockId", shop.BlockId);
+            command.Parameters.AddWithValue("@OpeningOn", shop.OpeningOn);
+            
+            connection.Open();
+            int rowAffect = command.ExecuteNonQuery();
+            connection.Close();
+
+            if(rowAffect > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

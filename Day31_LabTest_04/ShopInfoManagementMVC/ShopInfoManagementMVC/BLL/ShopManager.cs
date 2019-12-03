@@ -15,5 +15,10 @@ namespace ShopInfoManagementMVC.BLL
         {
             return shopGateway.GetShops();
         }
+
+        public bool SaveShop(Shop shop)
+        {
+            return shopGateway.SaveShop(shop);
+        }
     }
 }

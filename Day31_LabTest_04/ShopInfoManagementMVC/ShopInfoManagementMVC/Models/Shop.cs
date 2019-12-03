@@ -17,6 +17,11 @@ namespace ShopInfoManagementMVC.Models
             OpeningOn = openingOn;
         }
 
+        public Shop()
+        {
+
+        }
+
         public int ShopId { get; set; }
         public string ShopName { get; set; }
         public string ContactNo { get; set; }
