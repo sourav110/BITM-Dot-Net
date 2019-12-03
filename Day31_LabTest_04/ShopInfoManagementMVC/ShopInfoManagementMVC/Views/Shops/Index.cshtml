@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShopInfoManagementMVC.Models.Shop>
+﻿@model IEnumerable<ShopInfoManagementMVC.Models.ShopViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -17,7 +17,6 @@
             <th>Contact No</th>
             <th>Level</th>
             <th>Block</th>
-            <th>Opening On</th>
         </tr>
     </thead>
     <tbody>
@@ -30,8 +29,7 @@
                 <td>@shop.ShopName</td>
                 <td>@shop.ContactNo</td>
                 <td>@shop.LevelId</td>
-                <td>@shop.BlockId</td>
-                <td>@shop.OpeningOn</td>
+                <td>@shop.BlockNo</td>
             </tr>
         }
         </tbody>

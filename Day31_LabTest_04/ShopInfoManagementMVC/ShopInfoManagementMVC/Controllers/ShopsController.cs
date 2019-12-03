@@ -13,12 +13,14 @@ namespace ShopInfoManagementMVC.Controllers
         ShopManager shopManager = new ShopManager();
         BlockManager blockManager = new BlockManager();
         LevelManager levelManager = new LevelManager();
+        ShopViewModelManager viewManager = new ShopViewModelManager();
 
         // GET: Shops
         public ActionResult Index()
         {
-            List<Shop> shops = shopManager.GetShops();
-            return View(shops);
+            //List<Shop> shops = shopManager.GetShops();
+            List<ShopViewModel> shopListView = viewManager.GetShopsWithLevelAndBlock();
+            return View(shopListView);
         }
 
         public ActionResult Create()
