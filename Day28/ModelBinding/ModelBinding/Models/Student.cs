@@ -7,12 +7,12 @@ namespace ModelBinding.Models
 {
     public class Student
     {
-        public Student(string name, string city, int age)
-        {
-            Name = name;
-            City = city;
-            Age = age;
-        }
+        //public Student(string name, string city, int age)
+        //{
+        //    Name = name;
+        //    City = city;
+        //    Age = age;
+        //}
 
         //public int Id { get; set; }
         public string Name { get; set; }
