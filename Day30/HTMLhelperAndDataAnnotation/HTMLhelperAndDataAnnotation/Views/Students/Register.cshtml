@@ -9,7 +9,7 @@
 <h2>Register</h2>
 
 <div>
-    @using (Html.BeginForm("Index", "Students", new { id = "regForm"}))
+    @using (Html.BeginForm())
     {
 
         <table class="table">
@@ -46,7 +46,7 @@
                     @Html.Label("Department")
                 </td>
                 <td>
-                    @Html.DropDownList("Department", new SelectList(ViewBag.Departments, "Id", "DeptName"))
+                    @Html.DropDownList("Department", new SelectList(departments, "Id", "DeptName"))
                 </td>
             </tr>
 
