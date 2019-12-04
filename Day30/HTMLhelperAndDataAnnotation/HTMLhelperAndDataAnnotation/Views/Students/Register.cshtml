@@ -1,0 +1,79 @@
+﻿@using HTMLhelperAndDataAnnotation.Models;
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Department> departments = ViewBag.Departments;
+}
+
+<h2>Register</h2>
+
+<div>
+    @using (Html.BeginForm("Index", "Students", new { id = "regForm"}))
+    {
+
+        <table class="table">
+            <tr>
+                <td>
+                    @Html.Label("Name")
+                </td>
+                <td>
+                    @Html.TextBox("Name")
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Email")
+                </td>
+                <td>
+                    @Html.TextBox("Email");
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Gender")
+                </td>
+                <td>
+                    @Html.RadioButton("Gender", "Male") Male
+                    @Html.RadioButton("Gender", "Female") Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Department")
+                </td>
+                <td>
+                    @Html.DropDownList("Department", new SelectList(ViewBag.Departments, "Id", "DeptName"))
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Address")
+                </td>
+                <td>
+                    @Html.TextArea("Address")
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.Label("Password")
+                </td>
+                <td>
+                    @Html.Password("Password")
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </td>
+            </tr>
+        </table>
+    }
+</div>
