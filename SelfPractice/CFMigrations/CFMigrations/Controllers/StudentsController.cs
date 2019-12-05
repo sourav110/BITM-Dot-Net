@@ -47,7 +47,7 @@ namespace CFMigrations.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "StudentId,StudentName,Email,RegNo,Department,Age,Password")] Student student)
+        public async Task<ActionResult> Create(Student student)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace CFMigrations.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "StudentId,StudentName,Email,RegNo,Department,Age,Password")] Student student)
+        public async Task<ActionResult> Edit(Student student)
         {
             if (ModelState.IsValid)
             {
