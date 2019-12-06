@@ -19,10 +19,13 @@ namespace CFMigrations.Models
 
         [Required(ErrorMessage ="Please enter email")]
         [Column(TypeName="varchar")]
+        [Index(IsUnique = true)]
         public string Email { get; set; }
 
         [Required(ErrorMessage ="Please enter reg no")]
         [DisplayName("Registration No.")]
+        [Index(IsUnique = true)]
+        [Column(TypeName = "varchar")]
         public string RegNo { get; set; }
 
         [Required(ErrorMessage ="Please enter department")]
