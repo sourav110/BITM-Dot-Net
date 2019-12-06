@@ -8,12 +8,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ProtPracticeMVC.Models;
+using ProtPracticeMVC.BLL;
 
 namespace ProtPracticeMVC.Controllers
 {
     public class CoursesController : Controller
     {
         private ProjectDbContext db = new ProjectDbContext();
+        SemesterManager semesterManager = new SemesterManager();
 
         // GET: Courses
         public async Task<ActionResult> Index()
@@ -40,6 +42,8 @@ namespace ProtPracticeMVC.Controllers
         // GET: Courses/Create
         public ActionResult Create()
         {
+            //ViewBag.Semesters = semesterManager.GetSemesters();
+            ViewBag.Semesters = new SelectList(db.Semesters, "SemesterId", "SemesterNo");
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentCode");
             return View();
         }
@@ -58,6 +62,8 @@ namespace ProtPracticeMVC.Controllers
                 return RedirectToAction("Index");
             }
 
+            //ViewBag.Semesters = semesterManager.GetSemesters();
+            ViewBag.Semesters = new SelectList(db.Semesters, "SemesterId", "SemesterNo", course.SemesterId);
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentCode", course.DepartmentId);
             return View(course);
         }
@@ -83,7 +89,7 @@ namespace ProtPracticeMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "CourseId,CourseCode,CourseName,Credit,Description,DepartmentId")] Course course)
+        public async Task<ActionResult> Edit(Course course)
         {
             if (ModelState.IsValid)
             {

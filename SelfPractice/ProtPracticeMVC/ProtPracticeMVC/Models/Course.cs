@@ -32,5 +32,10 @@ namespace ProtPracticeMVC.Models
         public int DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
+
+        [Display(Name ="Semester")]
+        public int SemesterId { get; set; }
+        [ForeignKey("SemesterId")]
+        public virtual Semester Semester { get; set; }
     }
 }
