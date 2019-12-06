@@ -9,5 +9,6 @@ namespace ProtPracticeMVC.Models
     public class ProjectDbContext : DbContext
     {
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Course> Courses { get; set; }
     }
 }
