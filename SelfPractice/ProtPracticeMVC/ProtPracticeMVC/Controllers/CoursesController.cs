@@ -42,8 +42,8 @@ namespace ProtPracticeMVC.Controllers
         // GET: Courses/Create
         public ActionResult Create()
         {
-            //ViewBag.Semesters = semesterManager.GetSemesters();
-            ViewBag.Semesters = new SelectList(db.Semesters, "SemesterId", "SemesterNo");
+            ViewBag.Semesters = semesterManager.GetSemesters();
+            //ViewBag.Semesters = new SelectList(db.Semesters, "SemesterId", "SemesterNo");
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentCode");
             return View();
         }
@@ -62,8 +62,8 @@ namespace ProtPracticeMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            //ViewBag.Semesters = semesterManager.GetSemesters();
-            ViewBag.Semesters = new SelectList(db.Semesters, "SemesterId", "SemesterNo", course.SemesterId);
+            ViewBag.Semesters = semesterManager.GetSemesters();
+            //ViewBag.Semesters = new SelectList(db.Semesters, "SemesterId", "SemesterNo", course.SemesterId);
             ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentCode", course.DepartmentId);
             return View(course);
         }
