@@ -1,4 +1,5 @@
 ﻿@model CFMigrationAndHTMLhelper.Models.Department
+@using Vereyon.Web;
 
 @{
     ViewBag.Title = "Create";
@@ -9,6 +10,8 @@
 
 @using (Html.BeginForm())
 {
+    @Html.RenderFlashMessages()
+
     <div class="form-group">
         @Html.LabelFor(model => model.DepartmentCode)
         @Html.TextBoxFor(model => model.DepartmentCode, new { @class = "form-control" })
@@ -21,11 +24,15 @@
         @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
     </div>
 
-    <input type="submit" value="Save" class="btn btn-default" />
+    <div class="form-group">
+        <input type="submit"  value="Save" class="btn btn-default"/>
+    </div>
+    
 }
 
 @section scripts
 {
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
