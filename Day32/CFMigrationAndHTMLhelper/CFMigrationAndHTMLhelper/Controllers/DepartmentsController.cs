@@ -31,19 +31,6 @@ namespace CFMigrationAndHTMLhelper.Controllers
             return View(department);
         }
 
-        //Unique validation
-        //public JsonResult IsCodeExists(string dCode)
-        //{
-        //    var depts = db.Departments.ToList();
-        //    if(!depts.Any(code => code.DepartmentCode.ToLower() == dCode.ToLower()))
-        //    {
-        //        return Json(true, JsonRequestBehavior.AllowGet);
-        //    }
-        //    else
-        //    {
-        //        return Json(false, JsonRequestBehavior.AllowGet);
-        //    }
-        //}
 
         public JsonResult IsCodeExists(string departmentCode)
         {
