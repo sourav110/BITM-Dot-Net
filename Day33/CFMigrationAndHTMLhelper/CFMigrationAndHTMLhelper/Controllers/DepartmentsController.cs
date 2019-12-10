@@ -12,6 +12,13 @@ namespace CFMigrationAndHTMLhelper.Controllers
     {
         ProjectDbContext db = new ProjectDbContext();
 
+
+        public ActionResult Show()
+        {
+            var depts = db.Departments.ToList();
+            return View(depts);
+        }
+
         // GET: Departments
         public ActionResult Create()
         {
@@ -58,5 +65,23 @@ namespace CFMigrationAndHTMLhelper.Controllers
                 return Json(false, JsonRequestBehavior.AllowGet);
             }
         }
+
+        public ActionResult ViewDetails()
+        {
+            ViewBag.DepartmentId = new SelectList(db.Departments, "DepartmentId", "DepartmentCode");
+            return View();
+        }
+
+        public JsonResult GetStudentByDepartment(int departmentId)
+        {
+            var students = db.Students.Where(dept => dept.DepartmentId == departmentId).ToList();
+            return Json(students);
+        }
+
+        public JsonResult GetDepartmentById(int studentId)
+        {
+            var student = db.Students.FirstOrDefault(s => s.StudentId == studentId);
+            return Json(student);
+        } 
     }
 }

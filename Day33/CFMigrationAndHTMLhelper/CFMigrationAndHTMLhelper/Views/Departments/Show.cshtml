@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CFMigrationAndHTMLhelper.Models.Department>
+
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show All Departments</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var dept in Model)
+        {
+            <tr>
+                <td>@dept.DepartmentCode</td>
+                <td>@dept.DepartmentName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

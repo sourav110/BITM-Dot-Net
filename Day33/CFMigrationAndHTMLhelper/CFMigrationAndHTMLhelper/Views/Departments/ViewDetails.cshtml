@@ -1,0 +1,102 @@
+﻿@model CFMigrationAndHTMLhelper.Models.Department
+
+@{
+    /**/
+
+    ViewBag.Title = "ViewDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Details</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DepartmentId, "Department")
+        @Html.DropDownList("DepartmentId", null, "--Select Department--", htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Reg No")
+        <select class="form-control" id="studentId" name="studentId">
+            <option>--Select Reg No--</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DepartmentName, "Department Name")
+        @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control", @readonly = "readonly"})
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Age</td>
+                <td>Department</td>
+            </tr>
+        </thead>
+        <tbody id="studentInfo">
+
+        </tbody>
+    </table>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#DepartmentId").change(function () {
+                var deptId = $("#DepartmentId").val();
+                var parameter = { departmentId: deptId }
+
+                $("#studentId").empty();
+                $("#studentId").append('<option value="">--Select Reg No--</option>')
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetStudentByDepartment", "Departments")',
+                    contentType: "application/json; charset= utf-8",
+                    data: JSON.stringify(parameter),
+                    success: function (studentList) {
+                        $.each(studentList, function (key, value) {
+                            $("#studentId").append('<option value =' + key.StudentId + '>' + value.RegNo + '</option>')
+                        })
+                    }
+                });
+            });
+
+
+            $("#studentId").change(function () {
+                var id = $("#studentId").val();
+                var parameter = { studentId: id } 
+
+                $("#DepartmentName").val("");
+                $("#studentInfo").empty();
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetDepartmentById", "Departments")',
+                    contentType: "application/json; charset= utf-8",
+                    data: JSON.stringify(parameter),
+                    success: function (student) {
+                        $("#DepartmentName").val(student.Department.DepartmentName)
+
+                        $("#studentInfo").append(
+                            '<tr>' +
+                            '<td>' + student.StudentName + '</td>' +
+                            '<td>' + student.Email + '</td>' +
+                            '<td>' + student.Age + '</td>' +
+                            '<td>' + student.Department.DepartmentName + '</td>' +
+                            '</tr>'
+                        )
+                    }
+                });
+            });
+
+
+        });
+    </script>
+}
