@@ -3,6 +3,8 @@
 @{
     /**/
 
+    /**/
+
     ViewBag.Title = "ViewDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -26,13 +28,15 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.DepartmentName, "Department Name")
-        @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control", @readonly = "readonly"})
+        @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control", @readonly = "readonly" })
     </div>
+
 
     <table class="table table-bordered">
         <thead>
             <tr>
                 <td>Name</td>
+                <td>Reg No</td>
                 <td>Email</td>
                 <td>Age</td>
                 <td>Department</td>
@@ -71,22 +75,24 @@
 
             $("#studentId").change(function () {
                 var id = $("#studentId").val();
-                var parameter = { studentId: id } 
+                var parameter = { studentId: id }
 
                 $("#DepartmentName").val("");
                 $("#studentInfo").empty();
 
                 $.ajax({
                     type: "POST",
-                    url: '@Url.Action("GetDepartmentById", "Departments")',
+                    url: '@Url.Action("GetStudentById", "Departments")',
+                    //url: 'Department/GetStudentById'
                     contentType: "application/json; charset= utf-8",
                     data: JSON.stringify(parameter),
                     success: function (student) {
-                        $("#DepartmentName").val(student.Department.DepartmentName)
-
+                        $("#DepartmentName").val(student.Department.DepartmentName);
+                        //alert(student);
                         $("#studentInfo").append(
                             '<tr>' +
                             '<td>' + student.StudentName + '</td>' +
+                            '<td>' + student.RegNo + '</td>' +
                             '<td>' + student.Email + '</td>' +
                             '<td>' + student.Age + '</td>' +
                             '<td>' + student.Department.DepartmentName + '</td>' +
@@ -95,7 +101,6 @@
                     }
                 });
             });
-
 
         });
     </script>

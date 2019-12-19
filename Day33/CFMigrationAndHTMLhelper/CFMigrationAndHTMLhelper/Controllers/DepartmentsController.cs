@@ -78,7 +78,7 @@ namespace CFMigrationAndHTMLhelper.Controllers
             return Json(students);
         }
 
-        public JsonResult GetDepartmentById(int studentId)
+        public JsonResult GetStudentById(int studentId)
         {
             var student = db.Students.FirstOrDefault(s => s.StudentId == studentId);
             return Json(student);
